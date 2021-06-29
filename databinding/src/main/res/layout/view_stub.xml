@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.WorkBean" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#42A5F5"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@{workBean.workContent}" />
+
+</layout>

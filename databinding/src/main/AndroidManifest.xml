@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zbt.databinding">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BindingSample">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Test1Activity" />
+        <activity android:name=".Test2Activity" />
+        <activity android:name=".Test3Activity" />
+        <activity android:name=".Test4Activity" />
+        <activity android:name=".Test5Activity" />
+        <activity android:name=".Test6Activity" />
+        <activity android:name=".Test7Activity" />
+        <activity android:name=".Test8Activity" />
+        <activity android:name=".Test9Activity" />
+    </application>
+
+</manifest>

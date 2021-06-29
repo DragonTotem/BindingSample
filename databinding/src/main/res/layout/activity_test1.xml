@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.zbt.databinding.EmployeeBean" />
+
+        <import type="android.view.View" />
+
+        <import type="com.zbt.databinding.ToolUtils" />
+
+        <variable
+            name="employeeBean"
+            type="EmployeeBean" />
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.ObservableWorkBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="数据绑定" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/TvStyle"
+            android:text="@{employeeBean.name, default=姚dae}" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            style="@style/TvStyle"
+            android:text="@{employeeBean.email??employeeBean.name}" />
+
+        <!-- 属性控制 -->
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="20dp"
+            android:text='属性控制' />
+
+        <Button
+            android:id="@+id/btn_attr_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可见性控制" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="view 可见测试"
+            android:visibility="@{workBean.card? View.VISIBLE : View.INVISIBLE}" />
+
+        <!-- 扩展数据及类的使用 -->
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="20dp"
+            android:text='扩展数据及类的使用' />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text='@{"是否打卡：" + ToolUtils.bolToString(workBean.card)}' />
+
+        <!-- 资源引用 -->
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="20dp"
+            android:text='资源引用' />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text='@{@string/name_format(workBean.name, workBean.card)}' />
+
+    </LinearLayout>
+</layout>

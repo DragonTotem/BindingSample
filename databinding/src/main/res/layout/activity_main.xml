@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity1"
+        android:text="单向/双向 数据绑定" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity2"
+        android:text="BaseObservable" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity3"
+        android:text="ObservableFiled" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity4"
+        android:text="ObservableArray" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity5"
+        android:text="双向数据绑定" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity6"
+        android:text="集合使用" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity7"
+        android:text="include和viewStub" />
+
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity8"
+        android:text="bindingAdapter和bindingConversion" />
+
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity9"
+        android:text="recyclerView" />
+</LinearLayout>

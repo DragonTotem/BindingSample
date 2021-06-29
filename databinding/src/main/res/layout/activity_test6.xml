@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="array"
+            type="String[]" />
+
+        <variable
+            name="list"
+            type="java.util.List&lt;String&gt;" />
+
+        <variable
+            name="map"
+            type="java.util.Map&lt;String, String&gt;" />
+
+        <variable
+            name="set"
+            type="java.util.Set&lt;String&gt;" />
+
+        <variable
+            name="sparse"
+            type="android.util.SparseArray&lt;String&gt;" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="key"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="集合的使用" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{array[index]}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{sparse[index]}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{list[index]}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{map[key]}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text='@{set.contains(key)?key:"不包含"}' />
+
+    </LinearLayout>
+</layout>

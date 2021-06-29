@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">dataBinding</string>
+    <string name="name_format">姓名：%s 是否打卡：%b</string>
+</resources>

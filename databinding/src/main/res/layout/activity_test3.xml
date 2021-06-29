@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.ObservableWorkBean" />
+
+        <import
+            alias="ClickHandler"
+            type="com.zbt.databinding.Test3Activity.ObservableWorkBeanChangeHandler" />
+
+        <variable
+            name="clickHandler"
+            type="ClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{workBean.name}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{String.valueOf(workBean.card)}" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="@{()->clickHandler.changeName()}"
+            android:text="改变属性 name" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="@{()->clickHandler.changeCard()}"
+            android:text="改变属性 card" />
+
+    </LinearLayout>
+</layout>

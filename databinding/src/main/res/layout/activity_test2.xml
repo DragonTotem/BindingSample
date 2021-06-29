@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.WorkBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{workBean.workName}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{workBean.workContent}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{workBean.workTime}" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="changeNameAndTime"
+            android:text="改变属性 name = 写代码 time = 4小时" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="changeContentAndTime"
+            android:text="改变属性 content = 加快速度 time = 8小时" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="changeTime"
+            android:text="改变属性 time = 2个工作日" />
+    </LinearLayout>
+</layout>

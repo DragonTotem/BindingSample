@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.ObservableWorkBean" />
+
+        <variable
+            name="eventBinding"
+            type="com.zbt.databinding.Test5Activity.EventBinding" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="model - View : 双向数据绑定" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{workBean.name}" />
+
+        <EditText
+            style="@style/EtStyle"
+            android:layout_marginTop="10dp"
+            android:text="@={workBean.name}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="60dp"
+            android:text="事件绑定" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:onClick="@{()->eventBinding.onNameClick(workBean)}"
+            android:text="@{workBean.name}" />
+
+        <EditText
+            style="@style/EtStyle"
+            android:layout_marginTop="10dp"
+            android:afterTextChanged="@{eventBinding::onAfterTextChanged}"
+            android:hint="@{workBean.name}" />
+
+    </LinearLayout>
+</layout>

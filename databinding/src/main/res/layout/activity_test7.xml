@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="workBean"
+            type="com.zbt.databinding.WorkBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_show"
+            style="@style/BtnStyle"
+            android:text="显示viewStub" />
+
+        <include
+            layout="@layout/view_include"
+            bind:workBean="@{workBean}" />
+
+        <ViewStub
+            android:id="@+id/view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/view_stub"
+            bind:workBean="@{workBean}" />
+
+    </LinearLayout>
+</layout>

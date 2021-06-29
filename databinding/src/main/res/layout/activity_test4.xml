@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="strs"
+            type="androidx.databinding.ObservableList&lt;String&gt;" />
+
+        <variable
+            name="map"
+            type="androidx.databinding.ObservableArrayMap&lt;String,String&gt;" />
+
+        <variable
+            name="index"
+            type="int" />
+        
+        <variable
+            name="key"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{strs[index]}" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:text="@{map[key]}" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="changeIndexAndKey"
+            android:text="改变index和key" />
+
+        <Button
+            style="@style/BtnStyle"
+            android:onClick="changeValue"
+            android:text="改变value" />
+
+    </LinearLayout>
+</layout>
