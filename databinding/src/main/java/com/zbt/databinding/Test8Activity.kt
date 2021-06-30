@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingConversion
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -20,24 +21,24 @@ import com.zbt.databinding.databinding.ActivityTest8Binding
 class Test8Activity : BaseActivity<ActivityTest8Binding>() {
 
     companion object {
-//        /**
-//         * 更改原生的
-//         */
-//        @JvmStatic
-//        @BindingAdapter("android:text")
-//        fun setText(tv: TextView, text: String) {
-//            tv.text = "$text 是大佬"
-//        }
+        /**
+         * 更改原生的，这种情况下，整个报下的TextView的android:text都会跟更改
+         */
+        @JvmStatic
+        @BindingAdapter("android:text")
+        fun setText(tv: TextView, text: String) {
+            tv.text = "$text 是大佬"
+        }
 
-//        /**
-//         * 自定义
-//         */
-//        @JvmStatic
-//        @BindingAdapter("text")
-//        fun printText(tv: TextView, text: String) {
-//            println("获取到的text：$text")
-//        }
-
+        /**
+         * 自定义
+         */
+        @JvmStatic
+        @BindingAdapter("text")
+        fun printText(tv: TextView, text: String) {
+            println("获取到的text：$text")
+        }
+//        // 放在Companion object 会报这个错误：@BindingConversion is only allowed on public static methods conversionString(java.lang.String)
 //        @BindingConversion
 //        fun conversionString(text: String): String? {
 //            return "$text-conversionString"
@@ -62,7 +63,7 @@ class Test8Activity : BaseActivity<ActivityTest8Binding>() {
 fun convertStringToColor(str: String): Int {
     return when (str) {
         "红色" -> Color.parseColor("#FF1493")
-        "橙色" -> Color.parseColor("#0000FF")
+        "蓝色" -> Color.parseColor("#0000FF")
         else -> Color.parseColor("#FF4500")
     }
 }
