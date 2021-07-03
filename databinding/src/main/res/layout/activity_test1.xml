@@ -64,6 +64,10 @@
             style="@style/TvStyle"
             android:text='@{"是否打卡：" + ToolUtils.bolToString(workBean.card)}' />
 
+        <TextView
+            style="@style/TvStyle"
+            android:text='@{ToolUtils.bolToString(workBean.card)}' />
+
         <!-- 资源引用 -->
         <TextView
             style="@style/TvStyle"

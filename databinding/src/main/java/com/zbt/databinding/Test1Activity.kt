@@ -1,13 +1,14 @@
 package com.zbt.databinding
 
 import com.zbt.databinding.databinding.ActivityTest1Binding
+import com.zbt.databinding.databinding.ActivityTest1BindingImpl
 
 /**
  *Author: zbt
  *Time: 2021/6/27 17:03
  *Description: This is Test1Activity
  */
-class Test1Activity : BaseActivity<ActivityTest1Binding>() {
+class Test1Activity : BaseActivity<ActivityTest1BindingImpl>() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_test1
@@ -16,6 +17,7 @@ class Test1Activity : BaseActivity<ActivityTest1Binding>() {
     override fun initData() {
         dataBinding.employeeBean = EmployeeBean("12345", "张三", "zhangsan@163.com")
         dataBinding.workBean = ObservableWorkBean("李四", false)
+//        dataBinding.dataBinding
 
         dataBinding.btnAttrControl.setOnClickListener {
             dataBinding.workBean?.run {

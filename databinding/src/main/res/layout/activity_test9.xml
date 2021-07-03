@@ -1,62 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/btn_add_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="addItem"
-        android:text="addItem"
-        android:textAllCaps="false"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_add_item_list"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <Button
-        android:id="@+id/btn_add_item_list"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="addItemList"
-        android:text="addItemList"
-        android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_add_item"
-        app:layout_constraintRight_toLeftOf="@id/btn_remove_item"
-        app:layout_constraintTop_toTopOf="parent" />
+        <import type="androidx.databinding.adapters.Converters" />
 
-    <Button
-        android:id="@+id/btn_remove_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="removeItem"
-        android:text="removeItem"
-        android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_add_item_list"
-        app:layout_constraintRight_toLeftOf="@id/btn_update_item"
-        app:layout_constraintTop_toTopOf="parent" />
+        <import type="androidx.databinding.adapters.ViewBindingAdapter" />
 
-    <Button
-        android:id="@+id/btn_update_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="updateItem"
-        android:text="updateItem"
-        android:textAllCaps="false"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="activity"
+            type="com.zbt.databinding.Test9Activity" />
+    </data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_item_list" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            style="@style/TvStyle"
+            android:background="@{@color/orange_red}"
+            android:gravity="center"
+            android:text="xml设置Converters.convertColorToDrawable"
+            android:textColor='@{"白色"}' />
+
+
+        <TextView
+            android:id="@+id/tv_converters"
+            style="@style/TvStyle"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="代码设置Converters.convertColorToDrawable"
+            android:textColor='@{"白色"}' />
+
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="12dp"
+            android:background="@color/teal_200"
+            android:gravity="center"
+            android:padding="@{80}"
+            android:text="ViewBindingAdapter的Padding使用"
+            android:textColor='@{"白色"}' />
+
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="12dp"
+            android:onClick="@{activity::onViewClick}"
+            android:text="ViewBindingAdapter的注解方法使用" />
+
+        <TextView
+            style="@style/TvStyle"
+            android:layout_marginTop="12dp"
+            android:onClick="@{activity::onViewClick2}"
+            android:text="ViewBindingAdapter的注解方法使用" />
+
+    </LinearLayout>
+</layout>

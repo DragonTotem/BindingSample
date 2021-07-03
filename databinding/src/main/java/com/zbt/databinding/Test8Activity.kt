@@ -6,7 +6,6 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.TextView
 import android.widget.Toast
-import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingConversion
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -21,24 +20,24 @@ import com.zbt.databinding.databinding.ActivityTest8Binding
 class Test8Activity : BaseActivity<ActivityTest8Binding>() {
 
     companion object {
-        /**
-         * 更改原生的，这种情况下，整个报下的TextView的android:text都会跟更改
-         */
-        @JvmStatic
-        @BindingAdapter("android:text")
-        fun setText(tv: TextView, text: String) {
-            tv.text = "$text 是大佬"
-        }
+//        /**
+//         * 更改原生的
+//         */
+//        @JvmStatic
+//        @BindingAdapter("android:text")
+//        fun setText(tv: TextView, text: String) {
+//            tv.text = "$text 是大佬"
+//        }
 
-        /**
-         * 自定义
-         */
-        @JvmStatic
-        @BindingAdapter("text")
-        fun printText(tv: TextView, text: String) {
-            println("获取到的text：$text")
-        }
-//        // 放在Companion object 会报这个错误：@BindingConversion is only allowed on public static methods conversionString(java.lang.String)
+//        /**
+//         * 自定义
+//         */
+//        @JvmStatic
+//        @BindingAdapter("text")
+//        fun printText(tv: TextView, text: String) {
+//            println("获取到的text：$text")
+//        }
+
 //        @BindingConversion
 //        fun conversionString(text: String): String? {
 //            return "$text-conversionString"
@@ -63,11 +62,15 @@ class Test8Activity : BaseActivity<ActivityTest8Binding>() {
 fun convertStringToColor(str: String): Int {
     return when (str) {
         "红色" -> Color.parseColor("#FF1493")
-        "蓝色" -> Color.parseColor("#0000FF")
+        "橙色" -> Color.parseColor("#0000FF")
+        "白色" -> Color.parseColor("#FFFFFF")
         else -> Color.parseColor("#FF4500")
     }
 }
 
+/**
+ * 试过不选择继承的话编译不通过，待继续
+ */
 @BindingMethods(
     BindingMethod(
         type = TextView::class,
@@ -78,6 +81,7 @@ fun convertStringToColor(str: String): Int {
 class TextViewToast(context: Context, attrs: AttributeSet) :
     androidx.appcompat.widget.AppCompatTextView(context, attrs) {
     fun showToast(s: String?) {
+        println("s: $s")
         if (TextUtils.isEmpty(s)) {
             return
         }

@@ -54,7 +54,6 @@
             android:layout_marginTop="20dp"
             android:padding="20dp"
             android:text="点我"
-            android:textColor='@{"红色"}'
             app:showToast="@{workBean.workName}"
             android:background="@color/teal_200"/>
 

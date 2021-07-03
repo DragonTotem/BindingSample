@@ -42,3 +42,7 @@ class WorkBean : BaseObservable() {
 
     var workTime: String = ""
 }
+
+class AdapterBean {
+    var color: Int = 0xFF4500
+}

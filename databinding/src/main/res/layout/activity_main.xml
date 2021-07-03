@@ -9,7 +9,7 @@
     <Button
         style="@style/BtnStyle"
         android:onClick="gotoActivity1"
-        android:text="单向/双向 数据绑定" />
+        android:text="数据绑定 资源引用 属性控制 工具类使用" />
 
     <Button
         style="@style/BtnStyle"
@@ -41,15 +41,20 @@
         android:onClick="gotoActivity7"
         android:text="include和viewStub" />
 
-
     <Button
         style="@style/BtnStyle"
         android:onClick="gotoActivity8"
         android:text="bindingAdapter和bindingConversion" />
 
-
     <Button
         style="@style/BtnStyle"
         android:onClick="gotoActivity9"
+        android:text="converters 和 bindingXxxAdapter" />
+
+    <Button
+        style="@style/BtnStyle"
+        android:onClick="gotoActivity10"
         android:text="recyclerView" />
+
+
 </LinearLayout>

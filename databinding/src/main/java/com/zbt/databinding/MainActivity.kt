@@ -52,4 +52,9 @@ class MainActivity : AppCompatActivity() {
     fun gotoActivity9(view: View) {
         startActivityByClass(Test9Activity::class.java)
     }
+
+    fun gotoActivity10(view: View) {
+        startActivityByClass(Test10Activity::class.java)
+    }
+
 }

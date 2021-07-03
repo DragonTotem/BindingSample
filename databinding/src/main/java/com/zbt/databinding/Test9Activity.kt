@@ -1,85 +1,39 @@
 package com.zbt.databinding
 
-import android.os.Bundle
+import android.content.Context
+import android.graphics.Color
+import android.text.TextUtils
+import android.util.AttributeSet
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ObservableArrayList
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import android.widget.TextView
+import android.widget.Toast
+import androidx.databinding.BindingMethod
+import androidx.databinding.BindingMethods
+import androidx.databinding.adapters.Converters
+import androidx.databinding.adapters.ViewBindingAdapter
+import com.zbt.databinding.databinding.ActivityTest9Binding
+
 
 /**
- *Author: zbt
- *Time: 2021/6/28 21:49
- *Description: This is Test9Activity
+ * Description:
+ * @Author: zhuqt13
+ * Date: 2021/7/1 14:46
  */
-class Test9Activity : AppCompatActivity() {
+class Test9Activity : BaseActivity<ActivityTest9Binding>() {
+    override fun getLayoutId() = R.layout.activity_test9
 
-    private val employeeObservableList = ObservableArrayList<EmployeeBean>().apply {
-        for (i in 0..32) {
-            add(
-                EmployeeBean(
-                    "${Random().nextInt()}",
-                    "张三${Random().nextInt(100)}",
-                    "${Random().nextInt(1000)}@163.com}"
-                )
-            )
-        }
+    override fun initData() {
+        dataBinding.activity = this
+        dataBinding.tvConverters.background =
+            Converters.convertColorToDrawable(Color.parseColor("#0000FF"))
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_test9)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val employeeAdapter = EmployeeAdapter(employeeObservableList)
-        employeeAdapter.notifyDataSetChanged()
-        employeeObservableList.addOnListChangedCallback(
-            DynamicDataChangeCallback<ObservableArrayList<EmployeeBean>>(
-                employeeAdapter
-            )
-        )
-        recyclerView.adapter = employeeAdapter
+    fun onViewClick(view: View) {
+        println("onViewClick")
     }
 
-    fun addItem(view: View) {
-        if (employeeObservableList.size >= 1) {
-            val employeeBean = EmployeeBean(
-                "${Random().nextInt()}",
-                "张三${Random().nextInt(100)}",
-                "${Random().nextInt(1000)}@163.com}"
-            )
-            employeeObservableList.add(0, employeeBean)
-        }
-    }
-
-    fun addItemList(view: View) {
-        if (employeeObservableList.size >= 2) {
-            val employeeBeans: MutableList<EmployeeBean> = ArrayList<EmployeeBean>()
-            for (i in 0..4) {
-                val employeeBean = EmployeeBean(
-                    "${Random().nextInt()}",
-                    "张三${Random().nextInt(100)}",
-                    "${Random().nextInt(1000)}@163.com}"
-                )
-                employeeBeans.add(employeeBean)
-            }
-            employeeObservableList.addAll(0, employeeBeans)
-        }
-    }
-
-    fun removeItem(view: View) {
-        if (employeeObservableList.size >= 2) {
-            employeeObservableList.removeAt(1)
-        }
-    }
-
-    fun updateItem(view: View) {
-        if (employeeObservableList.size >= 2) {
-            val employeeBean: EmployeeBean = employeeObservableList[1]
-            employeeBean.name = "张三是大爷"
-            employeeObservableList[1] = employeeBean
-        }
+    fun onViewClick2(view: View) {
+        println("onViewClick2")
     }
 }
