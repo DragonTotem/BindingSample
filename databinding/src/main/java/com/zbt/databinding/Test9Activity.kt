@@ -26,6 +26,7 @@ class Test9Activity : BaseActivity<ActivityTest9Binding>() {
         dataBinding.activity = this
         dataBinding.tvConverters.background =
             Converters.convertColorToDrawable(Color.parseColor("#0000FF"))
+        dataBinding.tvTest.setOnClickListener { }
     }
 
 
@@ -36,4 +37,5 @@ class Test9Activity : BaseActivity<ActivityTest9Binding>() {
     fun onViewClick2(view: View) {
         println("onViewClick2")
     }
+
 }
