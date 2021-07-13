@@ -37,9 +37,9 @@
             android:layout_marginTop="60dp"
             android:text="事件绑定" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_binding3"
-            style="@style/TvStyle"
+            style="@style/BtnStyle"
             android:onClick="@{()->eventBinding.onNameClick(workBean)}"
             android:text="@{workBean.name}" />
 
