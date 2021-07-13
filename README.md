@@ -16,3 +16,11 @@ Use for ViewBinding and DataBinding
 [DataBinding（含ViewBinding）（二）绑定原理 ](https://juejin.cn/post/6984281996457902110)
 
 [DataBinding（三）构建过程分析 ](https://juejin.cn/post/6984282340205789191)
+
+关于（三）中 DataBinding 的 ProcessDataBinding也可以这样查看，在module的 dependencies｛｝中引入下面的代码即可，只是点击 AbstractProcessor 不能跳转
+
+dependencies {
+    ……
+
+    implementation 'androidx.databinding:databinding-compiler:4.2.0'
+}
