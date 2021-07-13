@@ -19,8 +19,8 @@ Use for ViewBinding and DataBinding
 
 关于（三）中 DataBinding 的 ProcessDataBinding也可以这样查看，在module的 dependencies｛｝中引入下面的代码即可，只是点击 AbstractProcessor 不能跳转
 
-dependencies {
-    ……
+    dependencies {
+        ……
 
-    implementation 'androidx.databinding:databinding-compiler:4.2.0'
-}
+        implementation 'androidx.databinding:databinding-compiler:4.2.0'
+    }
